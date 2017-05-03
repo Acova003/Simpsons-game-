@@ -1,0 +1,41 @@
+create list of questions and answers in a .txt file
+
+-create a function for menu display
+-display welcome message to user
+-display game options for user
+-ask user what they would like to do
+-collect user input 
+    -check user input for match
+        -create error message for other answers
+
+-create a function for hangman game
+-call import function
+-create an underscore character for each letter of the word/phrase
+-prompt the user to pick a letter
+    -call function to check for correct answer
+-if answer incorrect, add body part to hangman
+
+-create a function for word scramble
+-call import function
+-scramble the word/phrase from txt file
+-ask for user input
+-call function to check for correct answer
+
+-create a function for trvia game
+-call import function
+-call function to check for correct answer
+
+-create a function for submenu display
+-if the user wants to play hangman, type "A."
+-if the user wants to play the word scramble game, type "B."
+-if the user wants to play the trivia game, type "C."
+-call check for answer function
+
+-create a function that checks for a match in the user input
+-check for match 
+-if the user input doesn't match an option, display error message
+
+-create a function that imports a new random selection from txt file
+
+
+
