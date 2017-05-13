@@ -16,20 +16,22 @@ def user_guess():
     correct_guesses = 0
     num_of_questions = 0
 
+    while num_of_questions <=15:
+
     if user_answer == question_answers[question_list]:
         print "Woo Hoo! You're correct!"
         correct_guesses += 1
         num_of_questions += 1
 
     elif user_answer == "quit"
+        break
+
+    else:
         print "Do'oh!"
         num_of_questions +=1
 
-
 user_guess()
 
-while num_of_questions <= 15:
-    user_guess
 
 if num_of_questions == 15:
     "You're a bonified Simpsons expert! You've answered all of the questions correctly. Great Job!"
