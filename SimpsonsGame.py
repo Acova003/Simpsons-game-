@@ -1,65 +1,66 @@
 import random
 
-def question_generator():
+def get_rand_questions(num_questions, filename):
+    #creates list of questions(keys)
+    question_list = get_questions_from_file(filename).keys()
 
-    #opens SimpsonsQ_A.txt file
-    open_file = open("SimpsonsQ_A.txt")
+    #mixes questions at random
+    random_question = random.shuffle(question_list)
 
-    #creates an empty dictionary to store and organize txt file data
-    empty_dictionary = {}
+    #returns the first five questions of list
+    return question_list[:num_questions]
 
-    #creates an empty list to keep track of questions given
-    questions_given = []
-    
-    #iterates through each line to organize and split questions and answers
-    for line in open_file:
+    print question_list
+
+def get_questions_from_file(filename):
+    #opens txt file
+    questions_file = open(filename)
+
+    #creates empty dictionary to store questions and answers
+    questions = {}
+
+    #iterates through each line of the txt file
+    for line in questions_file:
+        #cleans up the output of data
         clean_line = line.strip(',\n' )
         split_line = clean_line.split(':')
-        empty_dictionary[split_line[0]] = split_line[-1]
+       
+        #splits questions into keys and answers into values
+        questions[split_line[0]] = split_line[-1].strip()   
 
-        #creates list of keys (questions)
-        question_list = empty_dictionary.keys()
+    return questions
 
-        #picks a random item from the list of questions
-        random_question = random.choice(question_list)
+def user_guess(correct_count, question, answer_dict):
+    #asks question and gets user input in a controlled format
+    user_answer = raw_input(question).upper()
+    
+    #creates an instance for correct and incorrect user answers
+    if user_answer == answer_dict[question]:
+        print "Woo Hoo! You're correct!"
+        correct_count = correct_count + 1 
 
-    #adds new question asked to the questions_given list
-    if random_question not in questions_given:
-        questions_given.append(random_question)
-        print random_question
+    else:
+        print "Do'oh!"
+    return correct_count
 
-def user_guess():
+print "Welcome to the Simpson's Trivia Game"
 
-    #user_answer = raw_input(question_generator()).upper()
-    user_answer = raw_input().upper()
-#     correct_guesses = 0
-#     num_of_questions = 0
+five_questions = get_rand_questions(5, "SimpsonsQ_A.txt")
 
-#     while num_of_questions <=15:
+answer_dict = get_questions_from_file("SimpsonsQ_A.txt")
 
-#         if user_answer == question_answers[question_list]:
-#             print "Woo Hoo! You're correct!"
-#             correct_guesses += 1
-#             num_of_questions += 1
+#starts number of correct answers at zero
+correct_count = 0
 
-#         elif user_answer == "quit":
-#             break
+#creates a loop for each time question is answered, a count of correct answers is taken
+for item in five_questions:
+    correct_count = user_guess(correct_count, item, answer_dict)
 
-#         else:
-#             print "Do'oh!"
-#             num_of_questions +=1
+if correct_count == 5:
+    print "You're a bonified Simpsons expert! You've answered all of the questions correctly. Great Job!"
 
-# print "Welcome to the Simpson's Trivia Game"
-# print "type 'quit' to exit game"
-
-user_guess()
-question_generator()
-
-# if num_of_questions == 15:
-#     "You're a bonified Simpsons expert! You've answered all of the questions correctly. Great Job!"
-
-# else:
-#     "You've answered %i out of 15 questions correctly" % (correct_guesses)
+else:
+    print "You've answered %d out of 5 questions correctly. Don't have a cow man. You're still awesome." % (correct_count)
 
 
         
