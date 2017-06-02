@@ -41,6 +41,7 @@ def user_guess(correct_count, question, answer_dict):
 
     else:
         print "Do'oh!"
+        print "The answer is %s" % (answer_dict[question])
     return correct_count
 
 print "Welcome to the Simpson's Trivia Game"
@@ -60,11 +61,16 @@ if correct_count == 5:
     print "You're a bonified Simpsons expert! You've answered all of the questions correctly. Great Job!"
 
 else:
-    print "You've answered %d out of 5 questions correctly. Don't have a cow man. You're still awesome." % (correct_count)
-
-
-        
-
+   
+    print  "           -----------------------------------------"
+    print  "           | You've answered %d out of 5 questions  |" % (correct_count)
+    print  "|\/\/\/|   |    correctly. Don't have a cow man    |" 
+    print  "|      |   |         You're still awesome!         |"   
+    print  "| (o)(o)   \_   ___________________________________/"   
+    print  "c      _)    | /"                              
+    print   "| '___|     <_/"
+    print   "|   /"         
+      
 
 
 
