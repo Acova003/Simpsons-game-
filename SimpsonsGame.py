@@ -36,7 +36,7 @@ def user_guess(correct_count, question, answer_dict):
     
     #creates an instance for correct and incorrect user answers
     if user_answer == answer_dict[question]:
-        print "Woo Hoo! You're correct!"
+        print  "Woo Hoo! You're correct!"
         correct_count = correct_count + 1 
 
     else:
@@ -58,19 +58,29 @@ for item in five_questions:
     correct_count = user_guess(correct_count, item, answer_dict)
 
 if correct_count == 5:
-    print "You're a bonified Simpsons expert! You've answered all of the questions correctly. Great Job!"
+    print  "           -----------------------------------------"
+    print  "           | You're a bonified Simpsons expert!    |" 
+    print  "|\/\/\/|   | You've answered all of the questions  |" 
+    print  "|      |   | correctly. Great job!                 |"   
+    print  "| (o)(o)   \_   ___________________________________/"   
+    print  "c      _)    | /"                              
+    print   "| '___|     <_/"
+    print   "|   /"         
+     
 
 else:
    
     print  "           -----------------------------------------"
     print  "           | You've answered %d out of 5 questions  |" % (correct_count)
-    print  "|\/\/\/|   |    correctly. Don't have a cow man    |" 
+    print  "|\/\/\/|   |    correctly. Don't have a cow man.   |" 
     print  "|      |   |         You're still awesome!         |"   
     print  "| (o)(o)   \_   ___________________________________/"   
     print  "c      _)    | /"                              
     print   "| '___|     <_/"
     print   "|   /"         
-      
+
+def main_menu():
+    print "TEST"
 
 
 
