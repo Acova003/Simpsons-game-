@@ -79,9 +79,6 @@ else:
     print   "| '___|     <_/"
     print   "|   /"         
 
-def main_menu():
-    print "TEST"
-
 
 
 
